@@ -4,7 +4,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	1.0.9
-Release:	%mkrel 3
+Release:	%mkrel 4
 Summary:	Network Socket Interface
 License:	PHP License
 Group:		Development/PHP
@@ -59,6 +59,6 @@ fi
 
 %files
 %defattr(-,root,root)
-%{_datadir}/pear/%{_class}/*.php
+%{_datadir}/pear/%{_class}
 %{_datadir}/pear/packages/%{upstream_name}.xml
 
