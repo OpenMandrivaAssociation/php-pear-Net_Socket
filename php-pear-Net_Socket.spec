@@ -15,8 +15,6 @@ Requires(preun): php-pear
 Requires:	php-pear
 BuildRequires:	php-pear
 BuildArch:	noarch
-# because it was broken out and the one doing it was pretty careless...
-Conflicts:	php-pear < 1:1.9
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
@@ -55,7 +53,7 @@ pear install --nodeps --soft --force --register-only \
 %if %mdkversion < 201000
 if [ "$1" -eq "0" ]; then
     pear uninstall --nodeps --ignore-errors --register-only \
-        %{upstream_name} >/dev/null || :
+        %{pear_name} >/dev/null || :
 fi
 %endif
 
@@ -64,3 +62,38 @@ fi
 %{_datadir}/pear/%{_class}
 %{_datadir}/pear/packages/%{upstream_name}.xml
 
+
+
+%changelog
+* Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 1.0.10-2mdv2011.0
++ Revision: 667634
+- mass rebuild
+
+* Mon Oct 18 2010 Guillaume Rousse <guillomovitch@mandriva.org> 1.0.10-1mdv2011.0
++ Revision: 586624
+- update to new version 1.0.10
+
+* Sun Nov 22 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.0.9-4mdv2010.1
++ Revision: 468722
+- spec cleanup
+- use pear installer
+- don't ship tests, even in documentation
+- own all directories
+- use rpm filetriggers starting from mandriva 2010.1
+
+* Mon Nov 09 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.0.9-3mdv2010.1
++ Revision: 463808
+- use rpm filetriggers to register starting from mandriva 2010.1
+
+* Sat Sep 26 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.0.9-2mdv2010.0
++ Revision: 449347
+- use pear installer
+- use fedora %%post/%%postun
+
+* Thu Sep 03 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.0.9-1mdv2010.0
++ Revision: 428988
+- import php-pear-Net_Socket
+
+
+* Thu Sep 03 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.0.9-1mdv2010.0
+- first mdv release
