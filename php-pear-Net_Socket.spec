@@ -3,13 +3,13 @@
 %define		upstream_name	%{_class}_%{_subclass}
 
 Name:		php-pear-%{upstream_name}
-Version:	1.0.10
-Release:	5
+Version:	1.0.14
+Release:	1
 Summary:	Network Socket Interface
 License:	PHP License
 Group:		Development/PHP
 URL:		http://pear.php.net/package/Net_LDAP2
-Source0:	http://download.pear.php.net/package/%{upstream_name}-%{version}.tgz
+Source0:	http://download.pear.php.net/package/Net_Socket-%{version}.tgz
 Requires(post): php-pear
 Requires(preun): php-pear
 Requires:	php-pear
@@ -82,3 +82,4 @@ install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
 
 * Thu Sep 03 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.0.9-1mdv2010.0
 - first mdv release
+
