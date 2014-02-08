@@ -4,7 +4,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	1.0.14
-Release:	1
+Release:	2
 Summary:	Network Socket Interface
 License:	PHP License
 Group:		Development/PHP
