@@ -8,7 +8,7 @@ Version:	1.0.14
 Release:	11
 License:	PHP License
 Group:		Development/PHP
-Url:		http://pear.php.net/package/Net_LDAP2
+Url:		https://pear.php.net/package/Net_LDAP2
 Source0:	http://download.pear.php.net/package/Net_Socket-%{version}.tgz
 BuildArch:	noarch
 BuildRequires:	php-pear
